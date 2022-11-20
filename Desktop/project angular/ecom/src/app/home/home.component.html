@@ -1,0 +1,84 @@
+<div class="card mb-3 mx-5 mt-3">
+    <div class="card-img-top imagemy"></div>
+    <div class="card-body">
+        <h5 class="card-title text-center">Join The Mouvement</h5>
+        <p class="card-text text-center">Why do it alone when we can do it together? Stand up for your tribe to add
+            meaning and purpose to your creative journey. If you want to get yourself authentic and imaginative treats
+            while endorsing native businesses, you’re in the right place.
+
+        </p>
+        <div class="text-center">
+            <a href="/signup" class="btn btn-dark mr-4">Sign Up</a>
+            <a href="/signin" class="btn btn-outline-success">Sign In</a>
+        </div>
+    </div>
+</div>
+<app-listproduit></app-listproduit>
+<div class="card  m-5">
+    <img src="../../assets/images/a.gif" alt="">
+</div>
+
+<div class="mx-5 mt-5">
+    <div class="text-left text-uppercase font-weight-bold mt-3">
+        Categories
+    </div>
+    <swiper [slidesPerView]="2" [spaceBetween]="30" [pagination]="{
+        clickable: true
+      }" class="mySwiper mx-2">
+        <ng-template swiperSlide *ngFor="let c of categories" class="m-3 c">
+            <div class="product-grid ">
+                <div class="product-image">
+                    <a href="#" class="image ">
+                        <img class="pic-1" [src]="c.image">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title text-center text-uppercase font-weight-bold"><a href="#">{{c.name}}</a></h3>
+                </div>
+            </div>
+        </ng-template>
+
+    </swiper>
+</div>
+<div class="mx-5 mt-5">
+    <div class="text-left text-uppercase font-weight-bold mt-3">
+        Find Us
+    </div>
+    <div #mapContainer id="map" class="ml-3 mt-2 mb-3"></div>
+</div>
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Find</h3>
+                    <ul>
+                        <li><a href="#">Our Stories</a></li>
+                        <li><a href="#">Why</a></li>
+                        <li><a href="#">Be you</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Company</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>He9ba</h3>
+                    <p>Experimental atelier and independent lifestyle brand based in Tunis, North Africa.</p>
+                </div>
+                <div class="col item social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="copyright">Hekba © 2022</p>
+            <p class="location"><i class="fa-solid fa-location-dot"></i>
+                <span class="ml-2">حي الفل نهج سد الحمى zone 5 </span>
+            </p>
+        </div>
+    </footer>
+</div>

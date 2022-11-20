@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-around mx-3 mt-5 flex-wrap">
+    <ng-container *ngFor="let i of lesproduit;index as x">
+        <app-produit *ngIf="x<6" [produit]="i"></app-produit>
+    </ng-container>
+</div>

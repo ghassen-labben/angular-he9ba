@@ -1,0 +1,24 @@
+<ng-container *ngFor="let c of produit.category">
+    <div *ngIf="c=='wommen'" class="m-3 c">
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" [src]="produit.photo[0]">
+                    <img *ngIf="produit.photo.length>1" class="pic-2" [src]="produit.photo[1]">
+                </a>
+                <a href="#" class="product-like-icon" data-tip="Add to Wishlist">
+                    <i class="far fa-heart"></i>
+                </a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <h3 class="title"><a href="#">{{produit.name}}</a></h3>
+                <div class="price">{{produit.price | prix }}
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
