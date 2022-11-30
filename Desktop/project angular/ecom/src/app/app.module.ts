@@ -4,17 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { Routes } from '@angular/router';
-/*const appRoutes: Routes = [
-  { path: 'products', component: productcomponent }
-];*/
+import { RouterModule, Routes } from '@angular/router';
+
 import { HomeComponent } from './home/home.component';
 import { ProduitComponent } from './produit/produit.component';
 import { ListproduitComponent } from './listproduit/listproduit.component';
 import { SignupComponent } from './signup/signup.component';
 import { PrixPipe } from './prix.pipe';
 import { SwiperModule } from 'swiper/angular';
+import { DetailProduitComponent } from './detail-produit/detail-produit.component';
+import { PrduitSearchComponent } from './prduit-search/prduit-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'produit/:id', component: DetailProduitComponent },
+  {
+    path: 'all-products', component: PrduitSearchComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,16 +31,24 @@ import { SwiperModule } from 'swiper/angular';
     ProduitComponent,
     ListproduitComponent,
     SignupComponent,
-    PrixPipe
+    PrixPipe,
+    DetailProduitComponent,
+    PrduitSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SwiperModule
+    SwiperModule,
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MatCardModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

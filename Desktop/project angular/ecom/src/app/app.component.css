@@ -1,10 +1,14 @@
+.btn {
+    font-weight: bold;
+    border-radius: 25px;
+}
+
 #mainNav {
     border-bottom: 1px solid rgba(45, 45, 45, .1);
     background-color: #fff;
     transition: all .2s;
 }
 
-.btn {
-    font-weight: bold;
-    border-radius: 25px;
+mat-slider {
+    width: 500px;
 }

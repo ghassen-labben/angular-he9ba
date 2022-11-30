@@ -9,14 +9,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SignupComponent implements OnInit {
   registerForm = new FormGroup(
     {
-      nom: new FormControl("UserName"),
-      mail: new FormControl("Email"),
-      passowrd: new FormControl("password"),
-      confirmPassword: new FormControl("confirm passowrd")
+      nom: new FormControl(""),
+      mail: new FormControl(""),
+      passowrd: new FormControl(""),
+      confirmPassword: new FormControl("")
     }
   )
   onSubmit() {
-    console.log(this.registerForm.value.nom);
+
   }
   constructor() { }
 

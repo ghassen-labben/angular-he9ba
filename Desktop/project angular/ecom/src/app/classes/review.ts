@@ -1,3 +1,3 @@
 export class Review {
-    constructor(public nom: String, public nbr: Number, public comment: String) { }
+    constructor(public nom: String, public nbr: number, public comment: String) { }
 }

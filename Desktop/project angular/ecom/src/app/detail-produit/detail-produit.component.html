@@ -1,0 +1,45 @@
+<div *ngIf="!checkProduit()" class="mx-5 d-flex justify-content-around">
+    <div class="mx-3 w-75 py-5 h-100 ">
+        <img *ngFor="let i of produit.photo" [src]="i" alt="" class="w-50 h-100 px-3 my-3">
+    </div>
+    <div class="w-25 py-5 h-100" style="width: 40vw!important;">
+        <h3 class="text-capitalize text-left">
+            {{produit.name}} <span class="text-sm-center font-weight-light badge badge-pill badge-danger"
+                *ngIf="!produit.enStock">
+                stock </span>
+            <span class="text-sm-center text-capitalize font-weight-light badge badge-pill badge-success"
+                *ngIf="produit.enStock">
+                en stock </span>
+        </h3>
+        <div class="text-left my-3" style="font-size: 26px;">{{produit.price |currency:'TND':'$':'1.3'}}</div>
+        <h4 class="text-left" style="font-size: 18px; font-weight: normal;">Select Size</h4>
+
+        <div class="my-3">
+            <button [disabled]="!produit.enStock" (click)="x=clickEvent(k)" class="btn btn-outline-dark mr-2"
+                *ngFor="let k of produit.sizes"
+                [ngClass]="{'active c1':x==k && produit.enStock ,'mr-2':true}">{{k}}</button>
+        </div>
+        <div class="my-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam, voluptates eius quo porro nihil
+            exercitationem inventore, maiores architecto temporibus rem harum! Minus sit omnis recusandae eius.
+            Exercitationem, dicta ad.
+        </div>
+        <h4 class="text-left" style="font-size: 18px; font-weight: normal;">Select Color</h4>
+
+        <div class="d-flex mb-5">
+            <button [disabled]="!produit.enStock" (click)="y=clickEvent(k)" class="btn btn-outline-dark"
+                *ngFor="let k of produit.colors"
+                [ngClass]="{'active c1':y==k && produit.enStock,'mr-2':true}">{{k}}</button>
+        </div>
+        <button type="button" class="my-3 btn btn-dark btn-lg btn-block">Add to Bag</button>
+        <button type="button" (click)="z=this.produitservice.favorite(produit.id_prod)"
+            class="my-3 btn btn-light btn-lg btn-block">Favorite<i class="ml-2 "
+                [ngClass]="{'fa-solid fa-heart':z,'ml-2 fa-regular fa-heart':true}"></i></button>
+
+    </div>
+
+
+</div>
+<div *ngIf="checkProduit()">
+    gfdgfd
+</div>

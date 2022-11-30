@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PrixPipe implements PipeTransform {
 
-  transform(p: Number): String {
-    return p + "DT";
+  transform(p: number): String {
+    return "$" + p + " DT";
   }
 
 }

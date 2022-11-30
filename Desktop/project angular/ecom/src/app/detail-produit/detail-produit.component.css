@@ -1,0 +1,18 @@
+.btn-outline-dark {
+    border-radius: 0;
+    box-shadow: none !important;
+}
+
+.c1,
+.btn-outline-dark:hover {
+    background-color: black !important;
+}
+
+.btn-dark {
+    background-color: black !important;
+    color: white;
+}
+
+.btn-dark:hover {
+    background-color: gray !important;
+}

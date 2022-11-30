@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Produit } from '../classes/produit';
 import { Review } from '../classes/review';
 import { ProduitService } from '../services/produit.service';
@@ -14,6 +14,7 @@ export class ListproduitComponent implements OnInit {
 
   ngOnInit(): void {
     this.lesproduit = this.listproduit.getProduit();
+
   }
 
 }

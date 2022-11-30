@@ -189,7 +189,7 @@
 .footer-dark {
     padding: 50px 0;
     color: #f0f9ff;
-    background-color: #282d32;
+    background-color: #000000ea;
 }
 
 .footer-dark h3 {
@@ -274,4 +274,8 @@
     opacity: 0.3;
     font-size: 13px;
     margin-bottom: 0;
+}
+
+.demo-section+.demo-section {
+    margin-top: 16px;
 }

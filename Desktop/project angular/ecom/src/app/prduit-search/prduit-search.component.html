@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between w-100 flex-row">
+    <div class="filtre d-block">
+        <form action="">
+            <input type="text">
+            sdqsudghqs
+            <div>
+                dihoqsdsq
+            </div>
+            *
+        </form>
+    </div>
+    <div class="products d-flex justify-content-around mt-5 mx-5 flex-wrap">
+        <div *ngFor="let p of lesproduits;index as a" class="w-25 p-2 mt-5">
+            <div class="product-grid d-block">
+                <div class="product-image">
+                    <a [routerLink]="['/produit/',p.id_prod]" class="image">
+                        <img class="img-1" [src]="p.photo[0]">
+                    </a>
+                </div>
+                <div class="product-content">
+                    <div class="price">{{p.price}}</div>
+                    <h3 class="title"><a [routerLink]="['/produit/',p.id_prod]">{{p.name}}</a></h3>
+                    <ul class="rating">
+                        <li *ngFor="let r of [1,2,3,4,5]"
+                            [ngClass]="{'fa-star':true,'fa-solid':charge(r,p.id_prod),'fa-regular':!charge(r,p.id_prod)}">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

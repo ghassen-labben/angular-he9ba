@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Produit } from '../classes/produit';
 import { ProduitService } from '../services/produit.service';
 // import Swiper core and required modules
@@ -16,12 +16,12 @@ SwiperCore.use([Navigation, Pagination]);
 export class HomeComponent implements OnInit {
 
   categories: Category[] = [
-    new Category("Men", "../../assets/images/men.png"),
-    new Category("Wommen", "../../assets/images/wommen.png"),
-    new Category("Kids", "../../assets/images/kids.png"),
-    new Category("Shoes", "../../assets/images/shoes.png"),
-    new Category("Hoodies", "../../assets/images/hoodie.png"),
-    new Category("T-Shirt", "../../assets/images/tshirt.png"),
+    new Category("men", "../../assets/images/men.png"),
+    new Category("wommen", "../../assets/images/wommen.png"),
+    new Category("kids", "../../assets/images/kids.png"),
+    new Category("shoes", "../../assets/images/shoes.png"),
+    new Category("hoodies", "../../assets/images/hoodie.png"),
+    new Category("t-shirt", "../../assets/images/tshirt.png"),
 
 
   ];
@@ -30,7 +30,9 @@ export class HomeComponent implements OnInit {
   produitcategory!: Produit[];
   constructor(private listproduit: ProduitService) { }
 
-
+  getProduitService() {
+    return this.listproduit;
+  }
   @ViewChild('mapContainer', { static: false }) gmap!: ElementRef;
   map!: google.maps.Map;
   lat = 36.70726747904303;
@@ -60,7 +62,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.produitcategory = this.listproduit.getProduitBycategory("men");
+    this.produitcategory = this.listproduit.getProduitBycategory("");
 
   }
 
