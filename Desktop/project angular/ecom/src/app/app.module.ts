@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule, Routes } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 import { HomeComponent } from './home/home.component';
 import { ProduitComponent } from './produit/produit.component';
@@ -16,14 +17,35 @@ import { DetailProduitComponent } from './detail-produit/detail-produit.componen
 import { PrduitSearchComponent } from './prduit-search/prduit-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from "@angular/common/http";
+import { ManageProduitComponent } from './Dashbord/manage-produit/manage-produit.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { NavComponent } from './nav/nav.component';
+import { MatButtonModule } from '@angular/material/button';
+import { SigninComponent } from './signin/signin.component';
 
-const appRoutes: Routes = [
+var appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'produit/:id', component: DetailProduitComponent },
   {
-    path: 'all-products', component: PrduitSearchComponent
-  }
+    path: 'all-products/:cat', component: PrduitSearchComponent
+  },
+  { path: 'signup', component: SignupComponent },
+  { path: 'cart', component: CheckoutComponent },
+  { path: 'signin', component: SigninComponent },
+
+  { path: '**', component: HomeComponent },
+
 ];
+if (localStorage.getItem('user')) {
+  appRoutes.forEach((e) => {
+    if (e.path == "signup" || e.path == "signin")
+      e.redirectTo = '';
+  }
+  );
+
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,8 +55,11 @@ const appRoutes: Routes = [
     SignupComponent,
     PrixPipe,
     DetailProduitComponent,
-    PrduitSearchComponent
-  ],
+    PrduitSearchComponent,
+    ManageProduitComponent,
+    CheckoutComponent,
+    NavComponent,
+    SigninComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,12 +68,18 @@ const appRoutes: Routes = [
     SwiperModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatIconModule
   ],
 
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
+
 
 }

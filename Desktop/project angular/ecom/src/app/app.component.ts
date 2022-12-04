@@ -8,10 +8,6 @@ import { ProduitService } from './services/produit.service';
 })
 export class AppComponent {
   title = 'Hekba';
-  constructor(private serviceprod: ProduitService) {
 
-  }
-  getProduitService() {
-    return this.serviceprod;
-  }
+
 }

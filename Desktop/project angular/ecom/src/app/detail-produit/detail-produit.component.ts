@@ -16,10 +16,12 @@ export class DetailProduitComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.produit = this.produitservice.getProduitById(this.id);
+    this.produitservice.getProduitById(this.id).subscribe((data) => {
+      this.produit = data;
+    });
   }
-  clickEvent(x: any) {
-    return x;
+  getService() {
+    return this.produitservice;
   }
   x: Number = 0;
   y: String = "";

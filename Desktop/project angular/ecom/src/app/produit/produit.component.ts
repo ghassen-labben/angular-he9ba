@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Produit } from '../classes/produit';
+import { User } from '../classes/user';
 import { ProduitService } from '../services/produit.service';
 
 @Component({
@@ -9,10 +10,10 @@ import { ProduitService } from '../services/produit.service';
 })
 export class ProduitComponent implements OnInit {
   @Input() produit!: Produit;
-  @Input() produitsearch!: Produit;
   constructor(public serviceproduit: ProduitService) { }
   z: boolean = false;
   ngOnInit(): void {
+
   }
 
 }

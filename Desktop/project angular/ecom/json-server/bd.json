@@ -1,0 +1,185 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nom": "ghassen",
+      "mail": "ghassenlabbencs@gmail.com",
+      "password": "12345ghassen",
+      "cart": [
+        1,
+        2,
+        3
+      ],
+      "purchased": [],
+      "reviews": []
+    },
+    {
+      "nom": "ghassen",
+      "mail": "ghassenlabbencs@gmail.com",
+      "passowrd": "12345ghassen",
+      "cart": null,
+      "purchased": null,
+      "reviews": null,
+      "id": 2
+    },
+    {
+      "nom": "ghassen",
+      "mail": "ghassenlabbencs@gmail.com",
+      "passowrd": "12345ghassen",
+      "cart": null,
+      "purchased": null,
+      "reviews": null,
+      "id": 3
+    },
+    {
+      "nom": "",
+      "mail": "",
+      "passowrd": "",
+      "cart": null,
+      "purchased": null,
+      "reviews": null,
+      "id": 4
+    }
+  ],
+  "reviews": [],
+  "category": [
+    {
+      "id": 1,
+      "name": "men",
+      "image": "../../assets/images/men.png"
+    },
+    {
+      "id": 2,
+      "name": "kids",
+      "image": "../../assets/images/kids.png"
+    },
+    {
+      "id": 3,
+      "name": "shoes",
+      "image": "../../assets/images/shoes.png"
+    },
+    {
+      "id": 4,
+      "name": "Wommen",
+      "image": "../../assets/images/wommen.png"
+    },
+    {
+      "id": 5,
+      "name": "tshirt",
+      "image": "../../assets/images/tshirt.png"
+    }
+  ],
+  "produits": [
+    {
+      "id": 1,
+      "name": "nike Blazer",
+      "price": 99.15,
+      "photo": [
+        "../../assets/images/blazer.webp",
+        "../../assets/images/blazer1.webp",
+        "../../assets/images/blazer2.webp",
+        "../../assets/images/blazer3.webp",
+        "../../assets/images/blazer4.webp"
+      ],
+      "enStock": true,
+      "DateFab": "new Date('2019-01-16')",
+      "sizes": [
+        38,
+        39,
+        40,
+        41,
+        41.5,
+        42
+      ],
+      "colors": [
+        "red",
+        "black"
+      ],
+      "reviews": {
+        "id": [
+          1,
+          2
+        ]
+      },
+      "category": [
+        "men",
+        "shoes"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "nike air Force",
+      "price": 299.15,
+      "photo": [
+        "../../assets/images/airforce.jpg",
+        "../../assets/images/Nike Air Force 1 React.webp",
+        "../../assets/images/Nike Air Force 1 React2.webp",
+        "../../assets/images/Nike Air Force 1 React3.webp",
+        "../../assets/images/Nike Air Force 1 React4.webp",
+        "../../assets/images/Nike Air Force 1 React5.webp",
+        "../../assets/images/Nike Air Force 1 React6.webp",
+        "../../assets/images/Nike Air Force 1 React7.webp"
+      ],
+      "enStock": true,
+      "DateFab": "2022-01-16",
+      "sizes": [
+        38,
+        39,
+        40,
+        41
+      ],
+      "colors": [
+        "White",
+        "black",
+        "red"
+      ],
+      "reviews": {
+        "id": [
+          1,
+          2
+        ]
+      },
+      "category": [
+        "men",
+        "shoes",
+        "wommen"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "nike air jordarn 1 low",
+      "price": 586.15,
+      "photo": [
+        "../../assets/images/airjordan1low.webp",
+        "../../assets/images/airjordan1low1.webp",
+        "../../assets/images/airjordanlow2.webp",
+        "../../assets/images/airjordanlow3.webp",
+        "../../assets/images/airjordanlow4.webp",
+        "../../assets/images/airjordanlow5.webp"
+      ],
+      "enStock": false,
+      "DateFab": "2022-02-16",
+      "sizes": [
+        38,
+        39,
+        40,
+        43
+      ],
+      "colors": [
+        "yellow",
+        "black",
+        "red"
+      ],
+      "reviews": {
+        "id": [
+          1,
+          2
+        ]
+      },
+      "category": [
+        "shoes",
+        "wommen"
+      ]
+    }
+  ]
+}

@@ -1,34 +1,95 @@
-<div class="d-flex justify-content-between w-100 flex-row">
-    <div class="filtre d-block">
-        <form action="">
-            <input type="text">
-            sdqsudghqs
-            <div>
-                dihoqsdsq
+<div class="d-flex w-100 my-5 justify-content-around">
+    <form class="filtres scroll" (ngSubmit)="searchlibelleandprice()" [formGroup]="filter">
+        <form action="" (ngSubmit)="searchBylibele()" [formGroup]="search">
+            <div class="input-group ">
+                <label class="form-label d-block text-left text-capitalize text-bold my-3 fs-3 shadow-sm bg-body"
+                    for="form1">Search</label>
+                <div id="search-autocomplete" class="form-outline d-flex justify-content-center">
+                    <input type="search" formControlName="search" id="form1" class="form-control" />
+                    <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
+                </div>
             </div>
-            *
         </form>
-    </div>
-    <div class="products d-flex justify-content-around mt-5 mx-5 flex-wrap">
-        <div *ngFor="let p of lesproduits;index as a" class="w-25 p-2 mt-5">
-            <div class="product-grid d-block">
-                <div class="product-image">
-                    <a [routerLink]="['/produit/',p.id_prod]" class="image">
-                        <img class="img-1" [src]="p.photo[0]">
-                    </a>
-                </div>
-                <div class="product-content">
-                    <div class="price">{{p.price}}</div>
-                    <h3 class="title"><a [routerLink]="['/produit/',p.id_prod]">{{p.name}}</a></h3>
-                    <ul class="rating">
-                        <li *ngFor="let r of [1,2,3,4,5]"
-                            [ngClass]="{'fa-star':true,'fa-solid':charge(r,p.id_prod),'fa-regular':!charge(r,p.id_prod)}">
-                        </li>
-                    </ul>
-                </div>
+        <div class="text-left text-capitalize text-bold my-3 fs-3 shadow-sm bg-body">
+            Gender
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" formControlName="men">
+            <label class="form-check-label" for="inlineCheckbox1">Men</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2" formControlName="wommen">Wommen</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+            <label class="form-check-label" formControlName="kids" for="inlineCheckbox3">Kids</label>
+        </div>
+
+        <div class="text-left text-capitalize my-3 fs-3 shadow-sm bg-body ">
+            Colors
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" style="background-color: red;" id="inlineCheckbox1"
+                value="red" formControlName="red">
+            <label class="form-check-label" for="inlineCheckbox1">Red</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" style="background-color: black;" id="inlineCheckbox2"
+                formControlName="black" value="black">
+            <label class="form-check-label" for="inlineCheckbox2">Black</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+            <label class="form-check-label" formControlName="white" for="inlineCheckbox3">White</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" style="background-color: yellow;" formControlName="yellow"
+                id="inlineCheckbox3" value="yellow">
+            <label class="form-check-label" for="inlineCheckbox3">yellow</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" style="background-color: blue;" id="inlineCheckbox3"
+                formControlName="blue" value="blue">
+            <label class="form-check-label" for="inlineCheckbox3">Bleu</label>
+        </div>
+        <div class="text-left text-capitalize my-3 fs-3 shadow-sm bg-body ">
+            Shop By Price
+        </div>
+        <select class="form-select" formControlName="price">
+            <option value="99">
+                {{0|prix }}-{{99|prix}}
+            </option>
+            <option value="399">
+                {{0|prix }}-{{399|prix}}
+            </option>
+            <option value="699">
+                {{0|prix }}-{{699|prix}}
+            </option>
+            <option type="checkbox" value="999">
+                {{0|prix }}-{{999|prix}}
+            </option>
+        </select>
+        <button type="submit" class="btn btn-lg btn-primary ">Search</button>
+    </form>
+
+
+    <div class="products d-flex justify-content-around flex-wrap">
+        <div *ngFor="let p of lesproduits;index as a" class="product-grid d-block ">
+            <div class="product-image">
+                <a [routerLink]="['/produit/',p.id]" class="image">
+                    <img class="img-1" [src]="p.photo[0]">
+                </a>
+            </div>
+            <div class="product-content">
+                <div class="price">{{p.price | prix}}</div>
+                <h3 class="title"><a [routerLink]="['/produit/',p.id]">{{p.name}}</a></h3>
+                <ul class="rating">
+                    <li *ngFor="let r of [1,2,3,4,5]"
+                        [ngClass]="{'fa-star':true,'fa-solid':charge(r,p.id),'fa-regular':!charge(r,p.id)}">
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
-
 </div>

@@ -7,8 +7,8 @@
             while endorsing native businesses, you’re in the right place.
 
         </p>
-        <div class="text-center">
-            <a href="/signup" class="btn btn-dark mr-4">Sign Up</a>
+        <div *ngIf="!getProduitService().message" class="text-center">
+            <a routerLink="/signup" class="btn btn-dark mr-4">Sign Up</a>
             <a href="/signin" class="btn btn-outline-success">Sign In</a>
         </div>
     </div>
@@ -28,14 +28,13 @@
         <ng-template swiperSlide *ngFor="let c of categories" class="m-3 c">
             <div class="product-grid ">
                 <div class="product-image">
-                    <a routerLink='all-products/' (click)="getProduitService().getProduitBycategory(c.name)"
-                        class=" image ">
+                    <a [routerLink]="['all-products/',c.name]" class=" image ">
                         <img class=" pic-1" [src]="c.image">
                     </a>
                 </div>
                 <div class="product-content">
-                    <h3 class="title text-center text-uppercase font-weight-bold"><a routerLink='all-products/'
-                            (click)="getProduitService().getProduitBycategory(c.name)">{{c.name}}</a></h3>
+                    <h3 class="title text-center text-uppercase font-weight-bold"><a
+                            [routerLink]="['all-products/',c.name]">{{c.name}}</a></h3>
                 </div>
             </div>
         </ng-template>
@@ -58,7 +57,8 @@
     <div class="text-left text-uppercase font-weight-bold mt-3">
         Find Us
     </div>
-    <div #mapContainer id="map" class="ml-3 mt-2 mb-3"></div>
+    <div #mapContainer id="map" class="ml-3 mt-2 mb-3">
+    </div>
 </div>
 <div class="footer-dark">
     <footer>

@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div class="h1 text-center">
+        Welcome Back !
+    </div>
+    <form class="text-center mt-2 w-50 m-auto shadow p-3" (ngSubmit)="onsubmit()" [formGroup]="signin" noValidate>
+        <div>
+            <label class="d-block font-weight-normal " for="mail">Email </label>
+            <input formControlName="email" type="email" id="mail" class="form-control"
+                placeholder="ex:ejfbeziuf@zeioaj.com">
+            <div *ngIf="email && email.invalid && email.touched" class="alert alert-danger">
+                L'email est obligatoire
+            </div>
+        </div>
+        <div>
+            <label class="d-block font-weight-normal " for="pass">Password </label>
+            <input type="password" formControlName="password" id="pass" class="form-control">
+            <div *ngIf="password && password.invalid && password.touched" class="alert alert-danger">
+                password est obligatoire
+            </div>
+            <div *ngIf="password && b" class="alert alert-danger">
+                password est incorrect
+            </div>
+        </div>
+        <button type="submit" class="btn btn-secondary btn-lg btn-block mt-5">Login</button>
+    </form>
+</div>

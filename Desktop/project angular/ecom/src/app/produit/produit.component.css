@@ -81,7 +81,7 @@
 }
 
 .product-grid .product-links li {
-    display: inline-block;
+    display: inline-block !important;
     margin: 0 2px;
 }
 
@@ -93,8 +93,9 @@
     width: 48px;
     height: 48px;
     border-radius: 0;
-    display: block;
+    display: block !important;
     transition: all 0.3s ease 0s;
+    cursor: pointer;
 }
 
 .product-grid:hover .product-links li a:hover {

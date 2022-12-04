@@ -1,44 +1,23 @@
-<div class="m-3 c" *ngIf="!produitsearch">
+<div class="m-3 c">
     <div class="product-grid">
         <div class="product-image">
-            <a [routerLink]="['/produit/',produit.id_prod]" class="image">
+            <a [routerLink]="['/produit/',produit.id]" class="image">
                 <img class="pic-1" [src]="produit.photo[0]">
                 <img *ngIf="produit.photo.length>1" class="pic-2" [src]="produit.photo[1]">
             </a>
-            <a (click)="z=this.serviceproduit.favorite(produit.id_prod)" class="product-like-icon" data-tip="Favorite">
+            <a (click)="z=this.serviceproduit.favorite(produit.id)" class="product-like-icon" data-tip="Favorite">
                 <i [ngClass]="{'fa-solid fa-heart':z,'fa-regular fa-heart':true}"></i>
             </a>
             <ul class="product-links">
-                <li><a [routerLink]="['/produit/',produit.id_prod]"><i class="fa fa-eye"></i></a></li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a [routerLink]="['/produit/',produit.id]"><i class="fa fa-eye"></i></a></li>
+                <li *ngIf="produit.enStock"><a (click)="serviceproduit.addProductTocart(produit.id)"><i
+                            class="fas fa-shopping-cart"></i></a>
+                </li>
             </ul>
         </div>
         <div class="product-content">
             <h3 class="title"><a href="#">{{produit.name}}</a></h3>
             <div class="price">{{produit.price | prix }}
-            </div>
-        </div>
-    </div>
-</div>
-<div class="m-3 c" *ngIf="produitsearch">
-    <div class="product-grid">
-        <div class="product-image">
-            <a href="#" class="image">
-                <img class="pic-1" [src]="produitsearch.photo[0]">
-                <img *ngIf="produitsearch.photo.length>1" class="pic-2" [src]="produitsearch.photo[1]">
-            </a>
-            <a (click)="z=this.serviceproduit.favorite(produitsearch.id_prod)" class="product-like-icon"
-                data-tip="Favorite">
-                <i [ngClass]="{'fa-solid fa-heart':z,'fa-regular fa-heart':true}"></i>
-            </a>
-            <ul class="product-links">
-                <li><a [routerLink]="['/produit/',produitsearch.id_prod]"><i class="fa fa-eye"></i></a></li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </div>
-        <div class="product-content">
-            <h3 class="title"><a href="#">{{produitsearch.name}}</a></h3>
-            <div class="price">{{produitsearch.price | prix }}
             </div>
         </div>
     </div>

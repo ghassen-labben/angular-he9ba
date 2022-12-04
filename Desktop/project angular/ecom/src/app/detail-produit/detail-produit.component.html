@@ -15,8 +15,8 @@
         <h4 class="text-left" style="font-size: 18px; font-weight: normal;">Select Size</h4>
 
         <div class="my-3">
-            <button [disabled]="!produit.enStock" (click)="x=clickEvent(k)" class="btn btn-outline-dark mr-2"
-                *ngFor="let k of produit.sizes"
+            <button [disabled]="!produit.enStock" (click)="x=getService().clickEvent(k)"
+                class="btn btn-outline-dark mr-2" *ngFor="let k of produit.sizes"
                 [ngClass]="{'active c1':x==k && produit.enStock ,'mr-2':true}">{{k}}</button>
         </div>
         <div class="my-4">
@@ -27,19 +27,17 @@
         <h4 class="text-left" style="font-size: 18px; font-weight: normal;">Select Color</h4>
 
         <div class="d-flex mb-5">
-            <button [disabled]="!produit.enStock" (click)="y=clickEvent(k)" class="btn btn-outline-dark"
+            <button [disabled]="!produit.enStock" (click)="y=getService().clickEvent(k)" class="btn btn-outline-dark"
                 *ngFor="let k of produit.colors"
                 [ngClass]="{'active c1':y==k && produit.enStock,'mr-2':true}">{{k}}</button>
         </div>
-        <button type="button" class="my-3 btn btn-dark btn-lg btn-block">Add to Bag</button>
-        <button type="button" (click)="z=this.produitservice.favorite(produit.id_prod)"
+        <button type="button" (click)="getService().addProductTocart(produit.id)"
+            class="my-3 btn btn-dark btn-lg btn-block" [disabled]="!produit.enStock">Add to Bag</button>
+        <button type="button" (click)="z=this.produitservice.favorite(produit.id)"
             class="my-3 btn btn-light btn-lg btn-block">Favorite<i class="ml-2 "
                 [ngClass]="{'fa-solid fa-heart':z,'ml-2 fa-regular fa-heart':true}"></i></button>
 
     </div>
 
 
-</div>
-<div *ngIf="checkProduit()">
-    gfdgfd
 </div>
