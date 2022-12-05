@@ -1,0 +1,31 @@
+.mat-card {
+    background-color: white;
+    height: 30vh !important;
+}
+
+.products {
+    width: 40vw;
+}
+
+.info {
+    width: 30vw;
+}
+
+.mat-card-actions {
+    position: relative !important;
+    margin-top: -20% !important;
+}
+
+.mat-card-title,
+.mat-card-subtitle {
+    color: black;
+}
+
+.mat-card-subtitle {
+    color: yellow;
+}
+
+.badge {
+    background-color: black !important;
+
+}

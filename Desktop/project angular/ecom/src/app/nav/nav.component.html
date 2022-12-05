@@ -5,14 +5,15 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link active text-capitalize" routerLink="/">Home</a>
                 </li>
-                <li class="nav-item"><a class="nav-link  text-capitalize" [routerLink]="['all-products/','all']">All
+                <li class="nav-item"><a class="nav-link  text-capitalize" [routerLink]="['all-products/','all']"
+                        (click)="getProduitService().i=true">All
                         products</a></li>
                 <li class="nav-item"><a class="nav-link  text-capitalize" [routerLink]="['all-products/','men']">Men
                     </a></li>
                 <li class="nav-item"><a class="nav-link  text-capitalize"
                         [routerLink]="['all-products/','wommen']">Wommen
                     </a></li>
-                <li class="nav-item"><a class="nav-link text-capitalize " href="contacts.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link text-capitalize " [routerLink]="['aboutUs']">About Us</a></li>
             </ul>
 
             <a *ngIf="!getProduitService().message" class="btn btn-primary shadow rounded-pill" role="button"
@@ -25,6 +26,8 @@
                         class="fas fa-shopping-cart"></i>
                 </mat-icon>
             </a>
+            <a *ngIf="getProduitService().message && getProduitService().message=='admin@admin.com'"
+                class="btn btn-success shadow rounded-pill mx-2" role="button" routerLink="/dashbord">Dashbord</a>
             <a *ngIf="getProduitService().message" class="btn btn-white rounded-pill" role="button"
                 (click)="getProduitService().signout()"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             <div *ngIf="produit.length>0 && x" class="cart_items rounded">

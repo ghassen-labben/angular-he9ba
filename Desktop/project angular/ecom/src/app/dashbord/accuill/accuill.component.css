@@ -1,0 +1,18 @@
+.side {
+    width: 20vw;
+    background-color: lightblue;
+    height: 100vh;
+}
+
+.side li {
+    list-style-type: none;
+}
+
+.side li a {
+    color: black;
+}
+
+
+.main {
+    width: 65vw;
+}

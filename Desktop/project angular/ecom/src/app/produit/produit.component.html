@@ -10,7 +10,9 @@
             </a>
             <ul class="product-links">
                 <li><a [routerLink]="['/produit/',produit.id]"><i class="fa fa-eye"></i></a></li>
-                <li *ngIf="produit.enStock"><a (click)="serviceproduit.addProductTocart(produit.id)"><i
+                <li *ngIf="produit.enStock"><a *ngIf="serviceproduit.message "
+                        (click)="serviceproduit.addProductTocart(produit.id)"><i class="fas fa-shopping-cart"></i></a>
+                    <a *ngIf="!serviceproduit.message " [routerLink]="['signin']"><i
                             class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>

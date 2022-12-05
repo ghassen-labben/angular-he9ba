@@ -45,12 +45,26 @@ export class PrduitSearchComponent implements OnInit {
       price: ['99']
     });
 
-    if (!localStorage.getItem('imad')) {
-      location.reload()
-      localStorage.setItem('imad', 'no reload')
-    } else {
-      localStorage.removeItem('imad')
+    this.load();
+    if (this.produitservice.i) {
+      this.load();
+
     }
+
+  }
+  searchBylibele() {
+    if (this.search.value.search.length > 0) {
+      this.lesproduits = this.k.filter(e => e.name[0] == this.search.value.search);
+    }
+  }
+  searchlibelleandprice() {
+    this.searchBylibele();
+    if (this.lesproduits.length > 0) {
+      this.lesproduits = this.lesproduits.filter(e => e.price <= this.price);
+    }
+  }
+  load() {
+
     this.route.params.subscribe((params: Params) => {
       this.cat = params["cat"];
       if (this.cat == "all") {
@@ -67,17 +81,6 @@ export class PrduitSearchComponent implements OnInit {
       }
 
     });
-  }
-  searchBylibele() {
-    if (this.search.value.search.length > 0) {
-      this.lesproduits = this.k.filter(e => e.name[0] == this.search.value.search);
-    }
-  }
-  searchlibelleandprice() {
-    this.searchBylibele();
-    if (this.lesproduits.length > 0) {
-      this.lesproduits = this.lesproduits.filter(e => e.price <= this.price);
-    }
   }
   charge(a: number, id: number) {
     this.produitservice.getReviews(id);
