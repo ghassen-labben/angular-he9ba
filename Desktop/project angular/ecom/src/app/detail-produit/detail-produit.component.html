@@ -20,16 +20,14 @@
                 [ngClass]="{'active c1':x==k && produit.enStock ,'mr-2':true}">{{k}}</button>
         </div>
         <div class="my-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laboriosam, voluptates eius quo porro nihil
-            exercitationem inventore, maiores architecto temporibus rem harum! Minus sit omnis recusandae eius.
-            Exercitationem, dicta ad.
+            {{produit.description}}
         </div>
         <h4 class="text-left" style="font-size: 18px; font-weight: normal;">Select Color</h4>
 
         <div class="d-flex mb-5">
-            <button [disabled]="!produit.enStock" (click)="y=getService().clickEvent(k)" class="btn btn-outline-dark"
-                *ngFor="let k of produit.colors"
-                [ngClass]="{'active c1':y==k && produit.enStock,'mr-2':true}">{{k}}</button>
+            <button [disabled]="!produit.enStock" (click)="y=getService().clickEvent(k)" ngClass="btn btn-outline-dark"
+                [ngStyle]="{'color':k}" *ngFor="let k of produit.colors"
+                [ngClass]="{'active c1':y==k && produit.enStock,'mr-2 btn btn-outline-dark':true}">{{k}}</button>
         </div>
         <button type="button" (click)="getService().addProductTocart(produit.id)"
             class="my-3 btn btn-dark btn-lg btn-block" [disabled]="!produit.enStock">Add to Bag</button>

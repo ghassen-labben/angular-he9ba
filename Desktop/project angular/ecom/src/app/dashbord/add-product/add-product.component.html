@@ -1,0 +1,67 @@
+<p>Add Product</p>
+<form action="" (ngSubmit)="onsubmit()" class="justify-content-around d-flex" [formGroup]="productform">
+    <div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Name produit" aria-label="Username"
+                aria-describedby="basic-addon1" formControlName="name">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"></span>
+            </div>
+            <input type="number" class="form-control" placeholder="price produit" aria-describedby="basic-addon1"
+                formControlName="price">
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1" formControlName="enStock">En Stock</label>
+        </div>
+        <div>
+            <p class="mt-2">Categories</p>
+            <div *ngFor="let c of categories" class="form-check form-check-inline">
+                <input name="lescategories" class="form-check-input" type="checkbox" id="inlineCheckbox1" [value]="c">
+                {{c}}
+            </div>
+
+        </div>
+        <div>
+            <p class="mt-2">Sizes</p>
+            <div *ngFor="let k of sizess" class="form-check form-check-inline">
+                <input name="lessizes" class="form-check-input" type="checkbox" id="inlineCheckbox1" [value]="k">
+                {{k}}
+            </div>
+            <div formArrayName="colors">
+                <div *ngFor="let c of lescolors.controls;index as i">
+                    color : {{i}} <input type="color" [formControlName]="i">
+                </div>
+            </div>
+            <button class="btn btn-info" type="button" (click)="onAjoutercolor()">
+                Ajouter color
+            </button>
+        </div>
+
+    </div>
+    <div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button type="submit" class="input-group-text">Upload</button>
+            </div>
+            <div class="custom-file">
+                <label for="files">Select files:</label>
+                <input id="file" type="file" class="form-control-file" (change)="onselect($event)" multiple>
+            </div>
+        </div>
+        <div>
+            <p>Date fabrication</p>
+            <input type="date" formControlName="DateFab" id="">
+        </div>
+        <div>
+            <p>Description Produit</p>
+            <textarea formControlName="description" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+
+</form>

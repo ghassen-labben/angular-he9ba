@@ -68,7 +68,10 @@ export class ProduitService {
 
     return this.x;
   }
-
+  i!: boolean;
+  deleteProduct(id: number) {
+    return this.http.delete<Produit>(URL + "/" + id);
+  }
   clickEvent(x: any) {
     return x;
   }
@@ -96,6 +99,8 @@ export class ProduitService {
   addProductTocart(id: number) {
     if (this.message && this.message.length > 0) {
       this.getUserBymail(this.message).subscribe((data) => {
+        console.log(data[0]);
+
         this.user3 = data[0];
         if (this.user3.cart.filter(e => e == id).length > 0) {
           return;

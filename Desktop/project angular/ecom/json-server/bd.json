@@ -1,44 +1,81 @@
 {
   "users": [
     {
-      "id": 1,
-      "nom": "ghassen",
-      "mail": "ghassenlabbencs@gmail.com",
-      "password": "12345ghassen",
-      "cart": [
-        1,
-        2,
-        3
-      ],
+      "nom": "admin",
+      "mail": "admin@admin.com",
+      "password": "admin123",
+      "cart": [],
       "purchased": [],
-      "reviews": []
-    },
-    {
-      "nom": "ghassen",
-      "mail": "ghassenlabbencs@gmail.com",
-      "passowrd": "12345ghassen",
-      "cart": null,
-      "purchased": null,
-      "reviews": null,
-      "id": 2
-    },
-    {
-      "nom": "ghassen",
-      "mail": "ghassenlabbencs@gmail.com",
-      "passowrd": "12345ghassen",
-      "cart": null,
-      "purchased": null,
-      "reviews": null,
+      "reviews": [],
       "id": 3
     },
     {
-      "nom": "",
-      "mail": "",
-      "passowrd": "",
-      "cart": null,
-      "purchased": null,
-      "reviews": null,
+      "nom": "ghassen",
+      "mail": "ghassenlabbencs@gmail.com",
+      "password": "123456789",
+      "cart": [
+        2,
+        1,
+        4,
+        5,
+        8
+      ],
+      "purchased": [],
+      "reviews": [],
+      "id": 1
+    },
+    {
+      "nom": "kamel",
+      "mail": "masoud@gmail.com",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "nom": "imadyaomda",
+      "mail": "imad@gmail.com",
+      "password": "12345imad",
       "id": 4
+    },
+    {
+      "nom": "fawzi",
+      "mail": "kamel@gmail.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "nom": "moraad",
+      "mail": "morad@gmail.com",
+      "password": "123456",
+      "cart": [
+        2,
+        1
+      ],
+      "purchased": [],
+      "reviews": [],
+      "id": 6
+    },
+    {
+      "nom": "fawzi",
+      "mail": "imadomda@gmail.com",
+      "password": "123456789",
+      "cart": [
+        2,
+        4
+      ],
+      "purchased": [],
+      "reviews": [],
+      "id": 7
+    },
+    {
+      "nom": "fawzi",
+      "mail": "ahlahla@gmail.com",
+      "password": "123456",
+      "cart": [
+        1
+      ],
+      "purchased": [],
+      "reviews": [],
+      "id": 8
     }
   ],
   "reviews": [],
@@ -104,7 +141,8 @@
       "category": [
         "men",
         "shoes"
-      ]
+      ],
+      "description": "Created for the hardwood but taken to the streets, the '80s b-ball icon returns with head-turning flair and a mix of textures. And we didn't forget about the feel—channelling vintage style back onto the streets, its padded, mid-cut collar lets you take your game anywhere in comfort."
     },
     {
       "id": 2,
@@ -143,7 +181,8 @@
         "men",
         "shoes",
         "wommen"
-      ]
+      ],
+      "description": "Lock in your style with this AJ1. We kept everything you love about the classic design—premium leather, Air cushioning, iconic Wings logo—while adding the Nike FlyEase closure system to make on and off a breeze. Getting out the door is now quicker than ever: just strap and zip."
     },
     {
       "id": 3,
@@ -179,7 +218,117 @@
       "category": [
         "shoes",
         "wommen"
-      ]
+      ],
+      "description": "Praised by the streets for its classic simplicity and comfort, the Nike Blazer Low '77 Vintage returns with its low-profile style and heritage b-ball looks. Featuring luscious suede details, a retro Swoosh design and a super-soft collar, it's the must-have wardrobe staple that will take you everywhere."
+    },
+    {
+      "name": "court vision low ",
+      "price": 999,
+      "photo": [
+        "../../assets/images/court vision low 1.webp",
+        "../../assets/images/court vision low 2.webp",
+        "../../assets/images/court vision low 3.webp",
+        "../../assets/images/court vision low 4.webp",
+        "../../assets/images/court vision low 5.webp",
+        "../../assets/images/court vision low 6.webp",
+        "../../assets/images/court vision low 7.webp",
+        "../../assets/images/court vision low.webp"
+      ],
+      "category": [
+        "shoes",
+        "men",
+        "wommen"
+      ],
+      "enStock": true,
+      "DateFab": "2022-12-02",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "42"
+      ],
+      "colors": [
+        "#000000",
+        "#ff0000",
+        "#ffbb00"
+      ],
+      "reviews": [],
+      "id": 4,
+      "description": "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point."
+    },
+    {
+      "name": "Jordan Jumpman Pro",
+      "price": 635.85,
+      "photo": [
+        "../../assets/images/Jordan Jumpman Pro.webp",
+        "../../assets/images/Jordan Jumpman Pro1.webp",
+        "../../assets/images/Jordan Jumpman Pro2.webp",
+        "../../assets/images/Jordan Jumpman Pro3.webp",
+        "../../assets/images/Jordan Jumpman Pro4.webp",
+        "../../assets/images/Jordan Jumpman Pro5.webp",
+        "../../assets/images/Jordan Jumpman Pro6.webp",
+        "../../assets/images/Jordan Jumpman Pro7.webp"
+      ],
+      "category": [
+        "shoes",
+        "men",
+        "kids"
+      ],
+      "enStock": true,
+      "DateFab": "2022-12-02",
+      "sizes": [
+        "36",
+        "38",
+        "39",
+        "40",
+        "42"
+      ],
+      "colors": [
+        "#ff0000",
+        "#000000",
+        "#ffffff",
+        "#0062ff"
+      ],
+      "reviews": [],
+      "id": 5,
+      "description": "Made from lightweight, stretchy fabric, the Nike Pro Flex Vent Max Shorts move with your body through your most intense workouts. An elastic, fold-over waistband lets you adjust your fit to keep the shorts in place."
+    },
+    {
+      "name": "Air Jordan 1 Mid",
+      "price": 165,
+      "photo": [
+        "../../assets/images/Air Jordan 1 Mid.webp",
+        "../../assets/images/Air Jordan 1 Mid2.webp",
+        "../../assets/images/Air Jordan 1 Mid3.webp",
+        "../../assets/images/Air Jordan 1 Mid4.webp",
+        "../../assets/images/Air Jordan 1 Mid5.webp",
+        "../../assets/images/Air Jordan 1 Mid6.webp",
+        "../../assets/images/Air Jordan 1 Mid7.webp",
+        "../../assets/images/Air Jordan 1 Mid8.webp"
+      ],
+      "category": [
+        "shoes",
+        "men",
+        "kids"
+      ],
+      "enStock": true,
+      "DateFab": "2017-06-05",
+      "sizes": [
+        "36",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42"
+      ],
+      "colors": [
+        "#1d1b1b",
+        "#ff0000",
+        "#00ff1e"
+      ],
+      "reviews": [],
+      "description": "Inspired by the original AJ1, this mid-top edition maintains the iconic look you love while choice colours and crisp leather give it a distinct identity.",
+      "id": 8
     }
   ]
 }

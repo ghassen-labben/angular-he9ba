@@ -20,11 +20,11 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
     this.signin = this.formbuilder.nonNullable.group({
       email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required, Validators.maxLength(10)]
+      password: ['', Validators.required]
     })
   }
   onsubmit() {
-    console.log(this.signin.get('password')?.invalid);
+
     this.produitservice.getUserBymail(this.email?.value).subscribe(data => {
       if (data.length > 0) {
         if (data[0].password == this.password?.value) {
@@ -33,7 +33,6 @@ export class SigninComponent implements OnInit {
           this.route.navigate(['']);
         }
         else {
-          this.password?.addValidators(Validators.maxLength(data[0].password.length));
           console.log("password incorrect");
           this.b = true;
         }

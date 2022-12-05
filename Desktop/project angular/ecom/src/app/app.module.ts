@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 import { HomeComponent } from './home/home.component';
@@ -18,12 +18,14 @@ import { PrduitSearchComponent } from './prduit-search/prduit-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from "@angular/common/http";
-import { ManageProduitComponent } from './Dashbord/manage-produit/manage-produit.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { NavComponent } from './nav/nav.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SigninComponent } from './signin/signin.component';
+import { DashbordModule } from './dashbord/dashbord.module';
+import { AccuillComponent } from './dashbord/accuill/accuill.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 var appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,18 +36,21 @@ var appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'cart', component: CheckoutComponent },
   { path: 'signin', component: SigninComponent },
+  { path: 'dashbord', component: AccuillComponent },
+  { path: 'aboutUs', component: AboutUsComponent },
 
-  { path: '**', component: HomeComponent },
+  { path: '**', component: HomeComponent }
 
 ];
 if (localStorage.getItem('user')) {
   appRoutes.forEach((e) => {
     if (e.path == "signup" || e.path == "signin")
       e.redirectTo = '';
+
   }
   );
-
 }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,12 +61,13 @@ if (localStorage.getItem('user')) {
     PrixPipe,
     DetailProduitComponent,
     PrduitSearchComponent,
-    ManageProduitComponent,
     CheckoutComponent,
     NavComponent,
-    SigninComponent],
+    SigninComponent,
+    AboutUsComponent],
   imports: [
     BrowserModule,
+    DashbordModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

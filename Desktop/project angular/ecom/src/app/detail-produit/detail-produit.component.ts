@@ -23,7 +23,7 @@ export class DetailProduitComponent implements OnInit {
   getService() {
     return this.produitservice;
   }
-  x: Number = 0;
+  x: string = "";
   y: String = "";
   checkProduit() {
     if (this.produit === undefined) {

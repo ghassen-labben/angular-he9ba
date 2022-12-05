@@ -1,0 +1,13 @@
+<p class="text-left text-capitalize  h3">ALL prooduct</p>
+<mat-card class="my-2 h-20 mr-3" *ngFor="let p of lesproduit">
+    <mat-card-header>
+        <mat-card-title>{{p.name}}</mat-card-title>
+        <mat-card-subtitle><img mat-card-sm-image [src]="p.photo[0]" alt=""></mat-card-subtitle>
+        <mat-card-subtitle class="badge bg-dark">{{p.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+        <button mat-fab color="warn" (click)="deleteproduct(p.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

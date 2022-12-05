@@ -21,10 +21,10 @@ export class SignupComponent implements OnInit {
       {
         nom: ['', Validators.required],
         mail: ['', [Validators.required, Validators.email]],
-        passowrd: ['', [Validators.required, Validators.minLength(5)]],
-        cart: [],
-        purchased: [],
-        reviews: []
+        password: ['', [Validators.required, Validators.minLength(5)]],
+        cart: [[]],
+        purchased: [[]],
+        reviews: [[]]
 
       }
 

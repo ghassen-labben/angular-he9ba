@@ -1,4 +1,3 @@
-import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Produit } from '../classes/produit';
@@ -51,12 +50,12 @@ export class CheckoutComponent implements OnInit {
       this.produitservice.getProducts(e);
     });
     this.lesproduit = this.produitservice.produitUser;
-
+    console.log(this.lesproduit);
   }
   sumProducts() {
     let s = 0;
     this.lesproduit.forEach(e => {
-      s += e.price;
+      s += e.price as number;
     });
     return s;
   }
